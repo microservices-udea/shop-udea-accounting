@@ -1,4 +1,4 @@
-package com.udea.edu.co.microservices.accounting.entity;
+package com.udea.edu.co.microservices.accounting.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class Account {
+public class AccountDto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @ApiModelProperty(hidden = true)
@@ -27,5 +27,5 @@ public class Account {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<AccountBreakdown> accountBreakdowns;
+    private List<AccountBreakdownDto> accountBreakdownDtos;
 }
