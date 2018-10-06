@@ -1,4 +1,4 @@
-package com.udea.edu.co.microservices.accounting.dtos;
+package com.udea.edu.co.microservices.accounting.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-public class AccountBreakdownDto {
+public class AccountBreakdown {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,5 +30,8 @@ public class AccountBreakdownDto {
 
     @JsonProperty("quantity")
     private Integer quantity;
+
+
+
 
 }

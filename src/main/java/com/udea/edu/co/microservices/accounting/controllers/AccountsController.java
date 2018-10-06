@@ -2,7 +2,7 @@ package com.udea.edu.co.microservices.accounting.controllers;
 
 
 
-import com.udea.edu.co.microservices.accounting.dtos.AccountDto;
+import com.udea.edu.co.microservices.accounting.entities.Account;
 import com.udea.edu.co.microservices.accounting.repository.AccountsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,18 +15,18 @@ public class AccountsController {
     AccountsRepository repository;
 
     @GetMapping
-    public Iterable<AccountDto> findAll() {
+    public Iterable<Account> findAll() {
         return repository.findAll();
     }
 
     @GetMapping(path = "/{account}")
-    public AccountDto find(@PathVariable("account") String account) {
+    public Account find(@PathVariable("account") String account) {
         return repository.findByAccountNumber(account);
     }
 
 
     @PostMapping(consumes = "application/json")
-    public AccountDto create(@RequestBody AccountDto account) {
+    public Account create(@RequestBody Account account) {
         return repository.save(account);
     }
 }

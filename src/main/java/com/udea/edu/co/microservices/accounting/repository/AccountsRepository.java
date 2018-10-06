@@ -1,12 +1,12 @@
 package com.udea.edu.co.microservices.accounting.repository;
 
-import com.udea.edu.co.microservices.accounting.dtos.AccountDto;
+import com.udea.edu.co.microservices.accounting.entities.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 @RestResource(exported = false)
-public interface AccountsRepository extends JpaRepository<AccountDto, Long>{
+public interface AccountsRepository extends JpaRepository<Account, Long>{
 
-    AccountDto findByAccountNumber(String account);
+    Account findByAccountNumber(String account);
 
 }
