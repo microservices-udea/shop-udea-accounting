@@ -31,4 +31,5 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://db/accountingdb?createIfNotExists=true
       SPRING_DATASOURCE_USERNAME: udea
       SPRING_DATASOURCE_PASSWORD: secret-password
+      SPRING_KAFKA_BOOTSTRAP-SERVERS: 172.17.0.1:32769,172.17.0.1:32768
 
